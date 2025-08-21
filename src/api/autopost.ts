@@ -11,7 +11,7 @@ async function createPost() {
         if (isRandom) {
             if (!searchTopics.length) throw new Error("No search direct topics found");
             const topic = searchTopics[Math.floor(Math.random() * searchTopics.length)];
-            console.log("TOPIC IS FROM SEARCH: ", topic);
+            console.log("TOPIC IS FROM SEARCH 🔍🔍: ", topic);
             if (!topic) throw new Error("No direct topics found");
             const search = await searchTrendingTopic(topic);
 
@@ -41,7 +41,17 @@ async function createPost() {
             const topic = directTopics[Math.floor(Math.random() * directTopics.length)];
             console.log("TOPIC IS FROM DIRECT: ", topic);
             if (!topic) throw new Error("No search topics found");
-            tweetAI = (await postbyAI(topic)) ?? null;
+            const queryPass = `Create an engaging Twitter/X post under 270 characters about:
+                        ${topic}
+                        Guidelines:
+                        - Start with an attention-grabbing hook
+                        - Keep it concise (max 270 chars)
+                        - Include 1-2 relevant hashtags
+                        - Add emojis where appropriate
+                        - Maintain a conversational tone
+                        - Remeber don't add any website link
+                        `
+            tweetAI = (await postbyAI(queryPass)) ?? null;
             console.log("Tweet is :", tweetAI);
         }
         if (!tweetAI) {
