@@ -29,9 +29,10 @@ async function createPost() {
                         - Start with an attention-grabbing hook
                         - Keep it concise (max 270 chars)
                         - Include 1-2 relevant hashtags
-                        - Add emojis where appropriate
+                        - Add emojis where appropriate only one emojis if required then max two emojis
                         - Maintain a conversational tone
                         - Remeber don't add any website link
+                        - Try to simple language
                         `
             tweetAI = (await postbyAI(queryPass)) ?? null;
             console.log("Tweet is :", tweetAI);
@@ -47,9 +48,10 @@ async function createPost() {
                         - Start with an attention-grabbing hook
                         - Keep it concise (max 270 chars)
                         - Include 1-2 relevant hashtags
-                        - Add emojis where appropriate
+                        - Add emojis where appropriate only one emojis if required then max two emojis
                         - Maintain a conversational tone
                         - Remeber don't add any website link
+                        - Try to simple language
                         `
             tweetAI = (await postbyAI(queryPass)) ?? null;
             console.log("Tweet is :", tweetAI);
