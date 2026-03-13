@@ -249,4 +249,4 @@ TwitterBotAI/
 
 ## License
 
-MIT - [Kaushalendra Singh](https://kaushalendra-portfolio.vercel.app/)
+MIT
