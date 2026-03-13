@@ -3,44 +3,45 @@
   <head>
     <meta charset="UTF-8" />
 
-    <!-- Favicon — X logo style -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230f172a'/><text y='.9em' font-size='68' x='10'>𝕏</text></svg>" />
+    <!-- Favicon from public/icon.svg -->
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="apple-touch-icon" href="/logo.png" />
 
     <!-- Viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Primary SEO -->
-    <title>TweetBotAI - Automate Your X Account with AI</title>
+    <!-- Primary SEO (fallback — react-helmet-async overrides per page) -->
+    <title>TweetBotAI — Automate Your X Account with AI</title>
     <meta name="description" content="Create AI-powered bots that post to your real X account automatically. Powered by Google Gemini. AES-256 encrypted. Set up in 2 minutes." />
-    <meta name="keywords" content="twitter automation, X automation, AI tweet bot, auto post twitter, Google Gemini twitter, twitter bot, tweet scheduler, AI content automation" />
-    <meta name="author" content="TweetBotAI" />
-    <meta name="robots" content="index, follow" />
+    <meta name="keywords"    content="twitter automation, X automation, AI tweet bot, auto post twitter, Google Gemini twitter, twitter bot, tweet scheduler, AI content automation" />
+    <meta name="author"      content="Kaushalendra Singh" />
+    <meta name="creator"     content="Kaushalendra Singh" />
+    <meta name="robots"      content="index, follow" />
+    <link rel="author"       href="https://kaushalendra-portfolio.vercel.app/" />
+    <link rel="canonical"    href="https://tweetbotai.vercel.app" />
 
-    <!-- Canonical -->
-    <link rel="canonical" href="https://tweetbotai.com" />
-
-    <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
+    <!-- Open Graph — uses logo.png as share card -->
     <meta property="og:type"         content="website" />
-    <meta property="og:url"          content="https://tweetbotai.com" />
+    <meta property="og:url"          content="https://tweetbotai.vercel.app" />
     <meta property="og:title"        content="TweetBotAI — Automate Your X Account with AI" />
     <meta property="og:description"  content="Create AI-powered bots that post to your real X account automatically. Powered by Google Gemini. AES-256 encrypted. Set up in 2 minutes." />
-    <meta property="og:image"        content="https://tweetbotai.com/og-image.png" />
+    <meta property="og:image"        content="https://tweetbotai.vercel.app/logo.png" />
     <meta property="og:image:width"  content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt"    content="TweetBotAI - AI-powered X automation platform" />
     <meta property="og:site_name"    content="TweetBotAI" />
     <meta property="og:locale"       content="en_US" />
 
-    <!-- Twitter / X Card -->
+    <!-- Twitter / X Card — uses logo.png as share card -->
     <meta name="twitter:card"        content="summary_large_image" />
     <meta name="twitter:site"        content="@tweetbotai" />
     <meta name="twitter:creator"     content="@tweetbotai" />
     <meta name="twitter:title"       content="TweetBotAI — Automate Your X Account with AI" />
     <meta name="twitter:description" content="Create AI-powered bots that post to your real X account automatically. Powered by Google Gemini. AES-256 encrypted. Set up in 2 minutes." />
-    <meta name="twitter:image"       content="https://tweetbotai.com/og-image.png" />
+    <meta name="twitter:image"       content="https://tweetbotai.vercel.app/logo.png" />
     <meta name="twitter:image:alt"   content="TweetBotAI - AI-powered X automation platform" />
 
-    <!-- Theme color (browser UI) -->
+    <!-- Theme color -->
     <meta name="theme-color" content="#1d9bf0" />
 
     <!-- Preconnect for fonts -->
