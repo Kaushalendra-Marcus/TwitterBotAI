@@ -1,0 +1,53 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  createdAt    DateTime @default(now())
+  geminiApiKey        String?
+  twitterApiKey       String?
+  twitterApiSecret    String?
+  twitterAccessToken  String?
+  twitterAccessSecret String?
+  bots Bot[]
+  logs TweetLog[]
+  @@map("users")
+}
+
+model Bot {
+  id            String    @id @default(cuid())
+  userId        String
+  name          String
+  topic         String
+  contentSource String    @default("custom_prompt")
+  interval      Int       @default(60)
+  hashtags      String?
+  status        String    @default("stopped")
+  lastRunAt     DateTime?
+  createdAt     DateTime  @default(now())
+  user User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  logs TweetLog[]
+  @@map("bots")
+}
+
+model TweetLog {
+  id        String   @id @default(cuid())
+  userId    String
+  botId     String
+  content   String
+  status    String
+  error     String?
+  tweetId   String?
+  createdAt DateTime @default(now())
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  bot  Bot  @relation(fields: [botId], references: [id], onDelete: Cascade)
+  @@map("tweet_logs")
+}
