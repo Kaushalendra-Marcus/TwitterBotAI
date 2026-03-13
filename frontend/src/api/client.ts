@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: `${import.meta.env.VITE_API_URL ?? ''}/api`,
   timeout: 15000,
   headers: { 'Content-Type': 'application/json' },
 })
@@ -44,11 +44,11 @@ export const userAPI = {
 
 // ─── BOTS ──────────────────────────────────────────────────
 export const botsAPI = {
-  list: ()                  => api.get('/bots'),
-  create: (data: object)    => api.post('/bots', data),
+  list: ()                           => api.get('/bots'),
+  create: (data: object)             => api.post('/bots', data),
   update: (id: string, data: object) => api.put(`/bots/${id}`, data),
   updateStatus: (id: string, status: string) => api.patch(`/bots/${id}/status`, { status }),
-  delete: (id: string)      => api.delete(`/bots/${id}`),
+  delete: (id: string)               => api.delete(`/bots/${id}`),
 }
 
 // ─── LOGS ──────────────────────────────────────────────────
